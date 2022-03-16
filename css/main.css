@@ -1,0 +1,352 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container-body {
+  background-image: url(../img/fondos.jpg);
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "search search search"
+    "main main main"
+    "footer footer footer";
+}
+/* .active-lateral {
+    background-image: url(../img/fondos.jpg);
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: "header header header"
+                         "search search search"
+                         "lateral main main"
+                         "footer footer footer";
+    display: block;
+} */
+
+/* MODAL */
+
+.modal-contenedor {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+.modal-carrito {
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 600px;
+  min-height: 200px;
+  background-color: rgb(255, 255, 255, 0.9);
+}
+.head-carrito {
+  display: flex;
+  justify-content: space-between;
+}
+.head-carrito h3 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 30px;
+  margin: 20px 0 20px 20px;
+}
+.boton-cerrar {
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 20px 20px 20px 0;
+}
+.boton-cerrar1 {
+  font-size: 35px;
+}
+.productoEnCarrito {
+  display: flex;
+  margin: 10px;
+  justify-content: space-around;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.productoEnCarrito p {
+  font-family: "Bebas Neue", cursive;
+  font-family: 16px;
+}
+.productoEnCarrito button {
+  border: none;
+  background: none;
+}
+.productoEnCarrito i {
+  font-size: 20px;
+}
+.precioProducto {
+  margin: 10px 0 20px 20px;
+}
+#carrito-contenedor {
+  min-height: 100px;
+}
+.cp {
+  font-size: 18px;
+  color: rgb(255, 0, 0);
+  font-family: "Bebas Neue", cursive;
+}
+#precioTotal {
+  font-family: "Bebas Neue", cursive;
+  font-family: 22px;
+}
+
+/* NAVEGADOR */
+
+.header {
+  grid-area: header;
+}
+.nav-1 {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
+.logo {
+  margin-left: 100px;
+}
+.logo-1 {
+  font-family: "Bebas Neue", cursive;
+  text-decoration: none;
+  font-size: 40px;
+  color: black;
+}
+.fav-icon {
+  font-size: 23px;
+}
+#boton-carrito {
+  margin-right: 150px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/* SEARCH */
+
+.search-1 {
+  grid-area: search;
+}
+.search {
+  caret-color: black;
+  color: white;
+  background-color: transparent;
+}
+.buscador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: rgb(255, 255, 255, 0.4);
+}
+.busqueda-1 {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.busqueda-1 input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  height: 30px;
+  width: 400px;
+  outline: none;
+  margin-left: 15px;
+}
+::placeholder {
+  font-size: 15px;
+  opacity: 0.5;
+  color: white;
+}
+.busqueda-1 button {
+  border: none;
+  height: 30px;
+  width: 30px;
+  background: none;
+}
+.icon-search {
+  font-size: 22px;
+  border-radius: 100%;
+}
+.boton-lateral {
+  background-color: transparent;
+  border: none;
+}
+.boton-lateral i {
+  font-size: 25px;
+}
+.boton-lateral i:active {
+  font-size: 30px;
+}
+
+/* MAIN */
+
+.main {
+  grid-area: main;
+  width: 100%;
+  min-height: 800px;
+  background-color: rgb(0, 0, 0, 0.5);
+  display: flex;
+}
+.container-productos {
+  width: auto;
+  margin: 70px 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.producto {
+  border-radius: 15px;
+  margin: 20px 10px;
+  background-color: rgba(30, 120, 180, 0.6);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 26vh;
+  height: 400px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.card-image {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+}
+.card-description {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 85%;
+  height: 40%;
+  margin: 10px 10px;
+}
+.card-precio {
+  color: white;
+  width: 200px;
+  font-size: 22px;
+  font-family: "Anton", sans-serif;
+}
+.card-dp {
+  color: white;
+  font-size: 17px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+.boton-carrito {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.boton-carrito:hover {
+  color: white;
+  cursor: pointer;
+  background-color: rgb(54, 54, 54);
+}
+.boton-eliminar {
+  width: 30px;
+  height: 30px;
+}
+.filter {
+  display: none;
+}
+.section-product {
+  display: flex;
+  width: 100%;
+}
+
+/* LATERAL */
+
+.menu-lateral {
+  display: none;
+  background-color: rgb(255, 255, 255, 0.7);
+  height: 810px;
+}
+.m-lateral {
+  width: 330px;
+  height: auto;
+}
+.ul-lateral {
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  margin: 50px auto;
+}
+.m-lateral ul {
+  padding: 40px auto 40px auto;
+}
+.m-lateral li {
+  list-style: none;
+}
+.li-lateral {
+  height: 40%;
+}
+.li-lateral2 {
+  height: 40%;
+}
+.m-lateral p {
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-family: "Bebas Neue", cursive;
+  color: black;
+  font-size: 25px;
+}
+.m-lateral label {
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
+}
+
+/* FOOTER */
+
+.footer {
+  grid-area: footer;
+  background-color: rgb(0, 0, 0, 0.9);
+}
+
+.active-lateral {
+  display: flex;
+}
