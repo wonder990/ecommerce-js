@@ -70,7 +70,7 @@ export function searchPosts(input, selector) {
 
 //////////// CARRITO DE COMPRAS
 
-listaDeProductos(stockProductos);
+// listaDeProductos(stockProductos);
 
 function listaDeProductos(a) {
   contenedorProductos.innerHTML = "";
@@ -98,6 +98,21 @@ function listaDeProductos(a) {
   });
 }
 
+//////// FETCH
+
+fetch("../JSON/productos.json")
+  .then((data) => data.json())
+  .then((data) => {
+    stockProductos = data;
+    console.log(data);
+    listaDeProductos(stockProductos);
+  });
+
+//////////   PRODUCTOS
+
+let stockProductos = [];
+console.log(stockProductos);
+
 ////////////////  DOM CARRITO
 
 function agregarAlCarrito(id) {
@@ -117,7 +132,7 @@ function agregarAlCarrito(id) {
     let div = document.createElement("div");
     div.classList.add("productoEnCarrito");
     div.innerHTML = `
-                    <p><span class="cp">Zapatilla:</span> ${productoAgregar.descripcion}</p>
+                    <p><span class="cp">Producto:</span> ${productoAgregar.descripcion}</p>
                     <p><span class="cp">Precio: </span> ${productoAgregar.precio}</p>
                     <p id=cantidad${productoAgregar.id}><span class="cp">Cantidad: </span> ${productoAgregar.cantidad}</p>
                     <button id=eliminar${productoAgregar.id} " class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>`;
@@ -159,8 +174,6 @@ function botonLateral() {
 botonLateral();
 
 //////// LOGICA MENU
-
-// Logica menu
 
 const ul = document.querySelector("#filtros");
 
@@ -215,7 +228,7 @@ document.addEventListener(
         text: "Tu producto se a añadido al carrito",
         icon: "success",
         confirm: "Ok",
-        timer: 1500,
+        timer: 1000,
       });
     } else if (hasClass(e.target, "test")) {
     }

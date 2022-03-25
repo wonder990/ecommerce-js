@@ -1,18 +1,3 @@
-//////// FETCH
-
-fetch("../JSON/productos.json")
-  .then((data) => data.json())
-  .then((data) => {
-    stockProductos = data;
-    console.log(data);
-  });
-
-//////////   PRODUCTOS
-
-let stockProductos = [];
-
-//////////
-
 const carritoAbrir = document.getElementById("boton-carrito");
 const carritoCerrar = document.getElementById("carritoCerrar");
 
