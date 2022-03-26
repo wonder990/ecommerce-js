@@ -6,8 +6,7 @@ const contenedorCarrito = document.getElementById("carrito-contenedor");
 const contadorCarrito = document.getElementById("contadorCarrito");
 
 const precioTotal = document.getElementById("precioTotal");
-
-const selectProduct = document.getElementById("selectProduct");
+const precioTotalIva = document.getElementById("precioTotalIva");
 
 const menuLateral1 = document.getElementById("menu-lateral1");
 const btnLateral = document.getElementById("boton_lateral");
@@ -159,6 +158,13 @@ function actualizarCarrito() {
   );
   precioTotal.innerText = carritoDeCompras.reduce(
     (acc, el) => acc + el.precio * el.cantidad,
+    0
+  );
+  precioTotalIva.innerText = carritoDeCompras.reduce(
+    (acc, el) =>
+      Math.round(
+        acc + el.precio * el.cantidad + (acc + el.precio * el.cantidad) * 0.21
+      ),
     0
   );
   guardarCarritoLS();
